@@ -1,0 +1,10 @@
+services:
+  app:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      DATABASE_URL: sqlite:////data/business_diagnostic.db
+      UPLOAD_DIR: /data/uploads
+    volumes: ["diagnostic_data:/data"]
+volumes:
+  diagnostic_data:
